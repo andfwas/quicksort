@@ -1,5 +1,5 @@
 const randomize = document.getElementById('randomize')
-const sort = document.getElementById('quicksort')
+const sorter = document.getElementById('quicksort')
 var randoms = document.getElementsByClassName('randoms')[0]
 var sorts = document.getElementsByClassName('sorts')[0]
 var random
@@ -11,7 +11,7 @@ randomize.addEventListener('click', () => {
   makeBars(random, randoms)
 })
 
-sort.addEventListener('click', () => {
+sorter.addEventListener('click', () => {
   quickSort(random)
 })
 
@@ -67,8 +67,8 @@ function quickSort(list) {
   let left = []
   let right = []
   for (let i = 1, total = list.length; i < total; i++) {
-    console.log(list[i]);
-    makeBars(list[i])
+    // console.log(list[i]);
+    // makeBars(list[i])
     // setTimeout(makeBars, i*2, arg, arg2)
     switch (true) {
       case(list[i] < pivot):
@@ -83,8 +83,8 @@ function quickSort(list) {
   }
   var step = [].concat(quickSort(left), pivot, quickSort(right));
   console.log(step);
-  // if (step.length == 100) {
-  //   makeBars(step, sorts)
-  // }
+  if (step.length == 100) {
+    makeBars(step, sorts)
+  }
   return step
 }
