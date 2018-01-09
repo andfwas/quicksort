@@ -1,0 +1,9 @@
+.randoms,
+.sorts {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  background-color: black;
+}
